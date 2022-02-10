@@ -6,6 +6,6 @@ WORKDIR /app
 
 RUN pip3 install -r requirements.txt
 
-EXPOSE 8500
+EXPOSE 5003
 
 CMD [ "python","app.py" ]
