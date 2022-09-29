@@ -1,5 +1,11 @@
 from flask import Flask, render_template
 import datetime
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+PORT = os.environ.get('PORT')
 
 app = Flask(__name__)
 
