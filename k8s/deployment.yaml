@@ -13,11 +13,11 @@ spec:
     spec:
       containers:
         - name: flask-test-app
-          image: flask-test:latest
+          image: ai4bk8s.azurecr.io/flask-test:v1
           resources:
             limits:
               memory: "128Mi"
               cpu: "500m"
           ports:
             - containerPort: 4001
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
