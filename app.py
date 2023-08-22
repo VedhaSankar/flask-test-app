@@ -18,7 +18,7 @@ def start():
 def ping():
 
     result = {
-        "ping"  : "pong"
+        "piiing"  : "pong"
     }
     return result
 
