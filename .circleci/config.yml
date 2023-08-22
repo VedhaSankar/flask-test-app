@@ -22,8 +22,8 @@ jobs:
       - checkout
       - run:
           command: |
-            docker run -p 4001:4001 man
             echo "this is the deploy step"
+            docker run -p 4001:4001 man
 
 workflow:
   version: 2
