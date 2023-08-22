@@ -2,11 +2,12 @@ version: 2.1
 
 orbs:
   python: circleci/python@2.0.3
+  docker: circleci/docker@2.2.0
 
-executors:
-  docker-exec:
-    docker:
-      - image: docker:17.05.0-ce-git
+# executors:
+#   docker-exec:
+#     docker:
+#       - image: docker:17.05.0-ce-git
 jobs:
   build:
     executor: docker-exec
@@ -22,7 +23,6 @@ jobs:
   deploy:
     executor: docker-exec
     steps:
-      - checkout
       - run:
           command: |
             docker run -p 4001:4001 man
