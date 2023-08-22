@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           command: |
-            sudo docker build -t man .
+            docker build -t man .
 
   deploy:
     executor: docker-exec
@@ -19,7 +19,7 @@ jobs:
       - checkout
       - run:
           command: |
-            sudo docker run -p 4001:4001 man
+            docker run -p 4001:4001 man
 
 workflow:
   version: 2
