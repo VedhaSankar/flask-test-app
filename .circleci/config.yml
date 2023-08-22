@@ -3,7 +3,7 @@ version: 2.1
 executors:
   docker-exec:
     docker:
-      - image: circleci/python:3.11
+      - image: docker:17.05.0-ce-git
 jobs:
   build:
     executor: docker-exec
