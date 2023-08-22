@@ -1,0 +1,31 @@
+version: 2.1
+
+executors:
+  docker-exec:
+    docker:
+      - image: circleci/python:3.11
+jobs:
+  build:
+    executor: docker-exec
+    steps:
+      - checkout
+      - run:
+          command: |
+            sudo docker build -t man .
+
+  deploy:
+    executor: docker-exec
+    steps:
+      - checkout
+      - run:
+          command: |
+            sudo docker run -p 4001:4001 man
+
+workflow:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
